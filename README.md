@@ -47,3 +47,51 @@ Constants
 * When we start the program world, some constants come into existence automatically. One of these is `RUBY_VERSION` (I used ruby -v)
 * In order to load all the names for our calculator from a file and into the REPL, the names need to be written as constants
 * This is because variables can't be read outside the file they're written in, but constants can be
+
+## Messages & Interfaces
+
+* In response to our messages, objects return something
+* If we do `one + 1` we send the `+` a message, telling it to add another number onto itself and return the result
+
+` 1 + 2`
+` 1.integer?`
+* In both cases we're sending a message to an object, but in the first case, we've got a space before the message +, making the statement look like a regular sum.
+* In the second case, the `.` between object & message
+
+Dot syntax
+* Dot is the only way to send messages to objective in Ruby
+* Dot means "send this object a message" 
+* `1.integer?` means send the object referenced by 1 a message asking if it's an integer or not
+* `1 + 2` is actually translated to `1.+(2)`. We say and see "one plus two" and Ruby translates this to "send the object referenced by `1` a message to add itself to the object referenced by `2`.
+
+Arguments
+* 1.integer? is answerable on it's own and doesn't need another object
+* When you do need another object to fulfil a message, you call the second object an argument
+
+`# 2 is the argument`
+`1.+(2)`
+`3`
+
+* The above is optional, but Ruby wants it to be simple
+
+Making Random Numbers
+`rand`
+
+
+* Each time run, you get a random float between zero and one
+* If you give rand an integer argument, you'll get a random number between zero and integer -1
+
+`integer = 6`
+`rand(integer)`
+`2`
+
+Floats
+`> nine./(two)
+`=> 4`
+
+* On the above, integer objects don't understand decimal points, so they round them DOWN 
+* 9/2 is 4.5 which the integer referenced by 'nine' rounds down to 4
+* We need to use `to_f` to do floats
+
+`4.to_f./(5)`
+`0.8`
