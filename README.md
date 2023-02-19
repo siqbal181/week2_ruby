@@ -95,3 +95,20 @@ Floats
 
 `4.to_f./(5)`
 `0.8`
+
+Chaining Messages 
+* It's fine to send lots of messages to objects, one after the other
+`> four.+(five).+(seven).-(one)`
+`=> 15`
+
+* As the computer goes through the line, each object.message statement is replaced by the value returned from sending the message to that object
+* 'queueing up of messages' is referred to as 'chaining'
+* `four` says "Hey program, get us the object referenced by the name of `four`
+* The program says "OK, here's `4`.
+* `.+(five)`: We say "Hey 4 add the value of the object referenced to the name five to your value.
+* 4 says "OK, here's 9"
+* `.+(seven)`: We say, hey 9 add the value of the object referenced by the name seven to your value
+* 9 says, OK, here's 16
+* Same with .-one then you get 15
+
+This process where the object.message gets replaced by the return value, which can be a new object for a new MESSAGE is called REFERENTIAL TRANSPARENCY.
